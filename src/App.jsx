@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {v4 as uuidv4} from 'uuid'
 
+import Header from './components/Header'
 import Tasks from './components/Tasks'
 import "./App.css";
 import AddTask from "./components/AddTask";
@@ -23,7 +24,7 @@ const App = () =>  {
 
   const handleTaskClick = (taskId) => {
       const newTasks = tasks.map((task) => {
-        if (task.id === taskId) return {...task, completed: !task.completed}
+        if (task.id === taskId) return { ... task, completed: !task.completed}
 
         return task;
       })
@@ -33,8 +34,8 @@ const App = () =>  {
 
   const handleTaskAddition = (taskTitle) => {
     const newTasks = [
-      ...tasks,
-      {
+      ... tasks,
+      { 
         title: taskTitle,
         id: uuidv4(),
         completed:false,
@@ -43,11 +44,21 @@ const App = () =>  {
     setTasks(newTasks)
   }
 
+  const handleTaskDeletin = (taskId) => {
+    const newTasks = tasks.filter(task => task.id !== taskId) 
+    setTasks(newTasks)
+  }
+
   return(
     <>
       <div className="container">
+        <Header/>
         <AddTask handleTaskAddition={handleTaskAddition}  />
-        <Tasks tasks={tasks} handleTaskClick={handleTaskClick}/>
+        <Tasks
+         tasks={tasks} 
+         handleTaskClick={handleTaskClick}  
+         handleTaskDeletin={handleTaskDeletin} 
+         />
       </div>
     
     </>

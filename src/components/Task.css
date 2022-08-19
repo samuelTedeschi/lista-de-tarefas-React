@@ -10,3 +10,16 @@
     font-weight: 500;
     
 }
+
+.task-title{
+    cursor: pointer;
+}
+
+.remove-task-button, .see-task-details-button {
+    color: red;
+    background-color: #627173;
+    border-style: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
