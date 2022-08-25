@@ -52,25 +52,24 @@ const App = () =>  {
 
   return(
     <Router>
+
       <div className="container">
         <Header/>
-          <Route path="/" 
-          //exact 
-          render={() => (
+        <Route path="/" 
+          exact 
+          render={ () => (
               <>
-                <AddTask handleTaskAddition={handleTaskAddition}  />
-                <Tasks
-                  tasks={tasks} 
-                  handleTaskClick={handleTaskClick}  
-                  handleTaskDeletin={handleTaskDeletin} 
-                />
+                  <AddTask handleTaskAddition={handleTaskAddition}  />
+                  <Tasks
+                    tasks={tasks} 
+                    handleTaskClick={handleTaskClick}  
+                    handleTaskDeletin={handleTaskDeletin} 
+                  />
               </>
             )} 
-          />
-
-        
+        />        
       </div>
-    
+
     </Router>
   ) 
 }
