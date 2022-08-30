@@ -55,9 +55,6 @@ const App = () =>  {
 
       <div className="container">
         <Header/>
-        <Route path="/" 
-          exact 
-          render={ () => (
               <>
                   <AddTask handleTaskAddition={handleTaskAddition}  />
                   <Tasks
@@ -65,9 +62,7 @@ const App = () =>  {
                     handleTaskClick={handleTaskClick}  
                     handleTaskDeletin={handleTaskDeletin} 
                   />
-              </>
-            )} 
-        />        
+              </>      
       </div>
 
     </Router>
