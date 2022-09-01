@@ -1,5 +1,5 @@
 .task-container{
-    background-color: #627173;
+    background-color: #AD8631;
     margin: 8px 0;
     padding: 15px 20px;
     display: flex;
@@ -15,9 +15,9 @@
     cursor: pointer;
 }
 
-.remove-task-button, .see-task-details-button {
-    color: red;
-    background-color: #627173;
+.remove-task-button{
+    color: #61532C;
+    background-color: #AD8631;
     border-style: none;
     cursor: pointer;
     font-size: 18px;
